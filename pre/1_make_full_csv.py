@@ -10,11 +10,12 @@ spectra_df = pd.read_csv(spectra_file)
 oc_df = pd.read_csv(oc_file)
 out = open(out_file, "w")
 
-out.write("oc")
+
 spec = 350
 while spec <= 2500:
-    out.write(f",{spec}")
+    out.write(f"{spec},")
     spec = spec + 1
+out.write("oc")
 out.write("\n")
 
 done_ids = []
@@ -42,12 +43,13 @@ for counter, row in oc_df.iterrows():
     spectra_row = rows.iloc[0]
     if len(rows) > 1:
         duplicate_spectra.append(spectra_row)
-    out.write(str(soc))
+
     spec = 350
     while spec <= 2500:
         val = spectra_row[str(spec)]
-        out.write(f",{val}")
+        out.write(f"{val},")
         spec = spec + 1
+    out.write(str(soc))
     out.write("\n")
 
     done_ids.append(smp_id)

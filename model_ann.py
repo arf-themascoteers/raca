@@ -4,16 +4,14 @@ import torch
 
 
 class LucasMachine(nn.Module):
-    def __init__(self, size=3, mid=50):
+    def __init__(self, size=3, mid=10):
         super().__init__()
         self.fc = nn.Sequential(
             nn.Linear(size, mid),
             nn.LeakyReLU(),
-            nn.Linear(mid, 20),
+            nn.Linear(mid, 5),
             nn.LeakyReLU(),
-            nn.Linear(20, 10),
-            nn.LeakyReLU(),
-            nn.Linear(10, 1)
+            nn.Linear(5, 1)
         )
 
     def forward(self, x):

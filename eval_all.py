@@ -6,7 +6,7 @@ import os
 
 
 def process():
-    columns = {"linear" : "Linear", "rf" : "RF", "nn" : "NN", "svr": "SVR"}
+    columns = {"linear" : "Linear", "plsr": "PLSR","rf" : "RF", "svr": "SVR", "nn" : "NN"}
     params = [
         "rgb",
         "hsv",
