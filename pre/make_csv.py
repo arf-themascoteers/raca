@@ -2,16 +2,17 @@ import os
 
 import pandas as pd
 
-spectra_src_dir = "spectra"
-topsoil_file = "data.csv"
+spectra_file = "spectra"
+oc_file = "data.csv"
 out_file = "out.csv"
 
-topsoil_df = pd.read_csv(topsoil_file)
+spectra_df = pd.read_csv(spectra_file)
+oc_df = pd.read_csv(oc_file)
 out = open(out_file, "w")
 
 for counter, row in enumerate(topsoil_df.rows):
     print(row['smp_id'], counter)
-    if counter == 100
+    if counter == 100:
         break
 
 # out.write("id,oc")
